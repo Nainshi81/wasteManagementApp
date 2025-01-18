@@ -1,215 +1,129 @@
-/* Reset and Base Styles */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-style:italic;
+    color: aquamarine;
+    list-style: none;
+    font-family: sans-serif;
 }
-body{
-    background: url(background.png)
-    no-repeat center center fixed;
-    background-size: cover;
+.container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #131313;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #8fd3f4, #84fab0);
-    color: #fff;
-    scroll-behavior: smooth;
+.container::before{
+    content: '';
+    position: absolute;
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+    background: linear-gradient(#08ffe6,#fcd200)
+    
 }
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px;
+container::after{
+    content: '';
+    position: absolute;
+    height: 300px;
     width: 300px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    transition: left 0.5s ease;
-    z-index: 1000;
+    border-radius: 50%;
+    background: linear-gradient(#107329,#a8963f)
+}
+.container .ball-1{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #04f504;
+    transform: translate(-200px,150px);
+    position: absolute;
+}
+.container .ball-2{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: #8e2ff8;
+    transform: translate(150px,-220px);
+    position: absolute;
+}
+.container .ball-3{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #ffc40f;
+    transform: translate(150px,250px);
+    position: absolute;
+}
+.container .box{
+    height: 86vh;
+    width: 75%;
+    padding: 0,20px;
+    background: rgba(255,255,255,0.1);
+    z-index: 10;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.7);
+    backdrop-filter: blur(9px);
+}
+.container .box nav{
+    height: 7%;
+    width: 95%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px auto;
     padding: 20px;
 }
-.sidebar-header {
+.container .box ul li{
+    display: inline-block;
+    padding: 0 20px;
+}
+.container .box nav ul li a{
+    font-size: 15px;
+    cursor: pointer;
+}
+.container .box nav ul li a:hover{
+    color: #ffc404;
+}
+.container .box .contains{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-size: 0px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 80%;
+    position: relative;
+    margin-top: 8%;
+    padding-left: 80px;
 }
-
-.sidebar-header .close-btn {
-    font-size: 20px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.container .box.contains .section-1{
+    position: absolute;
+    margin-top: 70px;
 }
-
-.sidebar-header .close-btn:hover {
-    transform: scale(1.2);
+.container .box.container .section-1 h1{
+    font-size: 80px;
 }
-
-.sidebar-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.container .box.container .section-1 .button{
+    margin-top: 50px;
 }
-
-.sidebar-links li {
-    margin: 20px 0;
-}
-
-.sidebar-links li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
+.container .box.container .section-1 .button a{
     padding: 10px 20px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.sidebar-links li a:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
-    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
-}
-
-.sidebar.open {
-    left: 0;
-}
-
-/* Open Button */
-.open-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
+    border: 1px solid #fff;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1100;
+    
 }
-
-.open-btn span {
-    width: 30px;
-    height: 3px;
+.container .box.container .section-1 .button a:hover{
     background: #fff;
-    border-radius: 3px;
-    transition: all 0.3s ease;
+    color: #000;
 }
-
-
-/* Welcome Section */
-.welcome-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('https://via.placeholder.com/1920x10800') no-repeat center center/cover;
+.container .box.container .section-2 .button img{
+    width: 600px;
+    height: auto;
+    transform: translateX(380px);
 }
-
-.glass-overlay {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+span{
+    color: #fc002e;
+    font-size: 40px;
 }
-
-.welcome-section h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.welcome-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.welcome-section .button {
-    padding: 12px 25px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.welcome-section .button:hover {
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Glass Sections */
-.glass-section {
-    padding: 60px 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    border-radius: 15px;
-}
-
-.glass-section h2 {
-    font-size: 36px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.glass-section p {
-    font-size: 18px;
-    line-height: 1;
-    color: #f8f8f8;
-}
-
-/* Glass Cards Section */
-.container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.glass-card {
-    width: 280px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.336);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-.glass-footer {
-    padding: 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
-
